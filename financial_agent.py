@@ -7,12 +7,12 @@ import openai
 import os
 from dotenv import load_dotenv
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 # Web search Agent
 web_serch_agent = Agent(
    name = "Web search Agent",
    role = "Search the web from the information",
-   model = Groq(id = "llama3-groq-70b-8192-tool-use-preview"),
+   model = Groq(id = "llama3-groq-70b-8192-tool-use-preview",api_key=GROQ_API_KEY),
    tools = [DuckDuckGo()],
    instructions= ['Always include sources'],
    show_tool_calls= True,
@@ -23,7 +23,7 @@ web_serch_agent = Agent(
 # Financial Agent
 financ_agent = Agent(
    name = "Finance AI Agent",
-   model = Groq(id = "llama3-groq-70b-8192-tool-use-preview"),
+   model = Groq(id = "llama3-groq-70b-8192-tool-use-preview",api_key=GROQ_API_KEY),
    tools=[YFinanceTools(stock_price=True, analyst_recommendations=True, stock_fundamentals=True, company_news=True)],
    instructions=["Use tables to display the data"],
    show_tool_calls=True,
@@ -39,5 +39,5 @@ mutli_ai_agent = Agent(
     markdown=True
 )
 
-mutli_ai_agent.print_response("Summarize analyst recommendation and share the latest news for NVDA",stream=True)
+mutli_ai_agent.print_response("Summarize analyst recommendation and share the latest news for NVIDA",stream=True)
 
