@@ -24,19 +24,23 @@ This project demonstrates the power of AI in financial data analysis using the *
 ```bash
 git clone <repository-url>
 cd <repository-folder>
+```
 
-## **Setup environment**
+### **Setup environment**
 ```bash
 pip install -r requirements.txt
+```
 
 ### **Setup .env file**  
 ```bash
 PHIDATA_API_KEY = '<Your PHIData API Key>'
 GROQ_API_KEY = '<Your Groq API Key>'
+```
 
-## **Run the Agent**
+### **Run the Agent**
 ```bash
 python financial_agents.py
+```
 
 
 
