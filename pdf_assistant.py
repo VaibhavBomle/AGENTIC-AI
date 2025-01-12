@@ -22,7 +22,7 @@ knowlwdge_base.load()
 
 storage = PgAssistantStorage(table_name="pdf_assistant",db_url=db_url)
 
-def pdf_assisntat(new: bool = False,user = "user"):
+def pdf_assistant(new: bool = False,user = "user"):
     run_id: Optional[str] = None
 
     if not new:
@@ -49,4 +49,4 @@ def pdf_assisntat(new: bool = False,user = "user"):
         assistant.cli_app(markdown=True)
 
 if __name__ == "__main__":
-    typer.run(pdf_assisntat)
+    typer.run(pdf_assistant)
